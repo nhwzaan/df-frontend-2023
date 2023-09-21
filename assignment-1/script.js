@@ -60,19 +60,13 @@ function openAddBookPopup() {
     });
   }
   
-  // Function for deleting a book by ID
-  async function deleteBook(id) {
-    var books = getBooksFromLocalStorage();
-    var index = findBookIndexById(books, id);
-  
-    if (index !== -1) {
-      books.splice(index, 1);
-      saveBooksToLocalStorage(books);
-      await loadBooks();
-    }
+  async function deleteBook(x) {
+    var table = document.getElementById("book-list-table");
+    table.deleteRow(x.parentNode.parentNode.rowIndex)
   }
   
-  // Function to load books into the table
+
+
   async function loadBooks() {
     var books = getBooksFromLocalStorage();
     var table = document.getElementById("books-table");
@@ -154,6 +148,8 @@ function openAddBookPopup() {
   
   function addBookToLocalStorage(book) {
     var books = getBooksFromLocalStorage();
+    var table = document.getElementById("book-list-table");
+    
     books.push(book);
     saveBooksToLocalStorage(books);
   }
