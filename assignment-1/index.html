@@ -5,10 +5,109 @@
     <meta name="viewport" content="width=device-width" />
     <title>Bookstore</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   </head>
 
   <body>
-    Hello world
+    <!-- header section starts -->
+    <header>
+      <a href = "#" class="logo">Bookstore<span>.</span></a>
+      <div class="userprofile">
+        <img alt="user-avatar" src="https://img.freepik.com/free-vector/cute-cat-girl-sitting-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium_138676-4608.jpg?w=740&t=st=1695295837~exp=1695296437~hmac=7a243461048fc20d8eef4806e83ec09fc2c1f536798b03923c0cd8a3c3ac4018"/>
+        <span>nhwzaanie</span>
+      </div>
+    </header>
+    <!-- header section ends -->
+
     <script src="script.js"></script>
+    <div class="search-add">
+      <!-- search -->
+      <input class="search" type="text" placeholder="Search by title" oninput="searchBookByTitle(this.value)" />
+
+      <!-- add  -->
+      <button class="btn-add" onclick="openAddBookPopup()">Add book</button>
+    </div>
+
+    <div class="book-records">
+      <!-- Table to display book records -->
+        <table>
+          <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Topic</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody id="book-list">
+            <tr>
+              <td>Gone with the wind</td>
+              <td>Margaret Mitchell</td>
+              <td>Romantic</td>
+              <td><button onclick="deleteBook(this)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>The Phoenix Project</td>
+              <td>Gene Kim</td>
+              <td>Technical</td>
+              <td><button onclick="deleteBook(this)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Circe</td>
+              <td>Madeline Miller</td>
+              <td>Fantacy</td>
+              <td><button onclick="deleteBook(this)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Dracula</td>
+              <td>Bram Stoker</td>
+              <td>Horror</td>
+              <td><button onclick="deleteBook(this)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div class="add-book-pop-up" id="add-book-popup-bg">
+      <div class="popup-form-add-book" id="add-book-popup">
+        <form action="" class="form-container">
+          <h2>Add book</h2>
+  
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter book name" id="add-book-title" required />
+  
+          <label for="author"><b>Author</b></label>
+          <input type="text" placeholder="Enter author name" id="add-book-author" required />
+  
+          <label for="topic"><b>Topic</b></label>
+          <label for="add-book-topic">(the type of book)</label>
+          <select id="add-book-topic">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Romantic">Romantic</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Technical">Technical</option>
+            <option value="Horror">Horror</option>
+          </select>
+  
+          <div class="btn-group">
+            <button type="submit" class="btn" onclick="submitNewBook()">Add</button>
+            <button type="button" class="btn-cancel" onclick="hideAddBookPopup()" id="cancel-add-book-btn">Close</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="popup-background" id="delete-book-popup-bg">
+    <div class="popup-delete-book" id="delete-book-popup">
+      <form action="" class="form-container">
+        <h2>Delete Book</h2>
+        <p id="delete-book-msg">Are you sure you want to delete this book?</p>
+        <div class="btn-group-delete">
+          <button type="submit" class="btn" id="delete-book-btn">Delete</button>
+          <button type="button" class="btn-cancel" id="cancel-delete-book-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

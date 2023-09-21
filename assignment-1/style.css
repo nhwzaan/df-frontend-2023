@@ -1,4 +1,285 @@
+:root{
+  --pink: #FF96DF;
+  --light-pink: #FFCDF0;
+}
+
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
 html {
   height: 100%;
   width: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
 }
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+  font-size: 3rem;
+  color: #333;
+  font-weight: bolder;
+}
+
+header .logo span{
+  font-size: 3rem;
+  color: var(--pink);
+}
+
+head .userprofile{
+  display: flex;
+  align-items: center;
+}
+
+header .userprofile img{
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header .userprofile span{
+  font-size: 2rem;
+  padding: 0 1rem;
+  color: #666;
+}
+
+header .userprofile span:hover{
+  color: var(--pink);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-color: #666;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 6px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #c4cbd0;
+}
+
+td a {
+  text-decoration: none;
+  color: var(--pink);
+}
+
+th {
+  background-color: var(--light-pink);
+}
+
+.search-add {
+  float: right;
+  padding-top: 100px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  
+}
+
+.btn-add {
+  margin-left: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #C0392B;
+  display: inline-block;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: #EC7063;
+}
+
+.search {
+  padding: 8px;
+  border: 2px solid #dbe1e4;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 250px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.book-records{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.popup-form-add-book 
+{
+  border: 2px solid #dbe1e4;
+  width: 300px;
+  height: 335px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto; /* Căn giữa theo chiều ngang */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%);
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.popup-form-add-book input[type="text"] {
+  width: 245px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px solid #dbe1e4;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+.popup-form-add-book select {
+  width: 270px;
+
+  border: 2px solid #dbe1e4;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.popup-form-add-book label {
+  margin-left: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.popup-form-add-book form h2 {
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 16px;
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.btn-group {
+  float: right;
+}
+
+.form-container button {
+  display: block;
+  margin-right: 16px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #d2445d;
+  display: block;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  float: left;
+  border: 2px solid #d2445d;
+}
+
+.form-container button:hover {
+  background-color: #e4284b;
+}
+
+.form-container button[type="submit"] {
+  background-color: #fff;
+  color: #d2445d;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #d2445d;
+  color: #fff;
+}
+
+
+/* Delete Popup Styles */
+.popup-delete-book {
+  display: none;
+  border: 2px solid #dbe1e4;
+  width: 300px;
+  height: 180px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.popup-delete-book form h2 {
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 16px;
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.popup-delete-book form p {
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.popup-delete-book .form-container .btn-group-delete button {
+  margin-top: 5px;
+}
+
+.popup-delete-book .form-container .btn-group-delete button:hover {
+  background-color: #e4284b;
+}
+
+.popup-delete-book .form-container .btn-group-delete {
+  float: right;
+  margin-right: 15%;
+}
+
+
+/* popup background is the layer that separate popup with web background*/
+.popup-background {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+
