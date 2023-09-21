@@ -23,7 +23,7 @@ function openAddBookPopup() {
     addSubmitDeleteBookListener(id);
   }
   
-  async function submitNewBook() {
+  async function importNewBook() {
     var title = document.getElementById("add-book-title").value;
     var author = document.getElementById("add-book-author").value;
     var topic = document.getElementById("add-book-topic").value;
