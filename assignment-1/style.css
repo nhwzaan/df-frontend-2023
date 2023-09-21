@@ -258,17 +258,12 @@ th {
   margin-top: 5px;
 }
 
-.popup-delete-book .form-container .btn-group-delete button:hover {
-  background-color: #e4284b;
-}
 
 .popup-delete-book .form-container .btn-group-delete {
   float: right;
   margin-right: 15%;
 }
 
-
-/* popup background is the layer that separate popup with web background*/
 .popup-background {
   display: none;
   position: fixed;
@@ -278,8 +273,8 @@ th {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.4);
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
 }
 
 
