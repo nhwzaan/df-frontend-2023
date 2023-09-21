@@ -1,4 +1,3 @@
-// Functions for opening popups
 function openAddBookPopup() {
     var addBookPopupBg = document.getElementById("add-book-popup-bg");
     var addBookPopup = document.getElementById("add-book-popup");
@@ -20,12 +19,10 @@ function openAddBookPopup() {
     deleteBookPopupBg.style.display = "flex";
     deleteBookPopup.style.display = "block";
   
-    // Remove and re-add event listener to btnSubmitDeleteBook to prevent multiple bindings
     removeSubmitDeleteBookListener();
     addSubmitDeleteBookListener(id);
   }
   
-  // Function for submitting a new book
   async function submitNewBook() {
     var title = document.getElementById("add-book-title").value;
     var author = document.getElementById("add-book-author").value;
@@ -47,7 +44,7 @@ function openAddBookPopup() {
     await loadBooks();
   }
   
-  // Function for searching books by title
+
   function searchBookByTitle(value) {
     var books = getBooksFromLocalStorage();
     var table = document.getElementById("books-table");
@@ -123,12 +120,12 @@ function openAddBookPopup() {
     deleteBookPopup.style.display = "none";
   }
 
-  // Setup functions
+
   document.addEventListener("DOMContentLoaded", loadBooks);
   document.addEventListener("DOMContentLoaded", setupCloseAddBookPopup);
   document.addEventListener("DOMContentLoaded", setupCloseDeleteBookPopup);
   
-  // Additional helper functions
+
   function getBooksFromLocalStorage() {
     var storedBooks = JSON.parse(localStorage.getItem("books")) || [];
     return Array.isArray(storedBooks) ? storedBooks : [];
@@ -149,7 +146,7 @@ function openAddBookPopup() {
   function addBookToLocalStorage(book) {
     var books = getBooksFromLocalStorage();
     var table = document.getElementById("book-list-table");
-    
+
     books.push(book);
     saveBooksToLocalStorage(books);
   }
